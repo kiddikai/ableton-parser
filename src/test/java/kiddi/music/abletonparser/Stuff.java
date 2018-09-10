@@ -4,7 +4,7 @@ import kiddi.music.abletonparser.simplemodel.AbletonWrapper;
 import kiddi.music.abletonparser.simplemodel.Locator;
 import kiddi.music.abletonparser.simplemodel.TempoEvent;
 import kiddi.music.abletonparser.simplemodel.TimeSignatureEvent;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Paths;
