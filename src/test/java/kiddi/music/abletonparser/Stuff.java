@@ -14,7 +14,7 @@ public class Stuff {
     @Test
     public void stuff() throws IOException {
         AbletonParser parser = new AbletonParser();
-        AbletonWrapper ableton = parser.parse(Paths.get("src/test/resources/Agnosie unpacked.als.xml"));
+        AbletonWrapper ableton = parser.parse(Paths.get("src/test/resources/Agnosie.als"));
 
         List<Locator> locators = ableton.getLocators();
         List<TempoEvent> tempoEvents = ableton.getTempoEvents();
