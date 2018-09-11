@@ -1,12 +1,11 @@
 package kiddi.music.abletonparser.simplemodel;
 
-public class TempoEvent {
+public class TempoEvent extends Event {
 
-    private final double time;
     private final int tempo;
 
-    public TempoEvent(String time, String tempo) {
-        this.time = Double.parseDouble(time);
+    public TempoEvent(String timeQuarters, String tempo) {
+        super(timeQuarters);
         this.tempo = parseTempo(tempo);
     }
 
@@ -20,10 +19,6 @@ public class TempoEvent {
         }
 
         return iTempo;
-    }
-
-    public double getTime() {
-        return time;
     }
 
     public int getTempo() {

@@ -1,18 +1,12 @@
 package kiddi.music.abletonparser.simplemodel;
 
-public class TimeSignatureEvent {
-    private final double time;
+public class TimeSignatureEvent extends Event {
     private final TimeSignature timeSignature;
 
-    public TimeSignatureEvent(String time, String abletonSignature) {
-        this.time = Double.parseDouble(time);
+    public TimeSignatureEvent(String timeQuarters, String abletonSignature) {
+        super(timeQuarters);
         this.timeSignature = new TimeSignature(abletonSignature);
     }
-
-    public double getTime() {
-        return time;
-    }
-
     public TimeSignature getTimeSignature() {
         return timeSignature;
     }

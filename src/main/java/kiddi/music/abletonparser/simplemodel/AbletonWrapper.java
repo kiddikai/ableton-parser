@@ -19,21 +19,21 @@ public class AbletonWrapper {
                         locator.getTime().getValue(),
                         locator.getName().getValue()
                 ))
-                .sorted(Comparator.comparingDouble(Locator::getTime))
+                .sorted(Comparator.comparingDouble(Locator::getTimeQuarters))
                 .collect(Collectors.toList());
     }
 
     public List<TempoEvent> getTempoEvents() {
         return ableton.getLiveSet().getMasterTrack().getDeviceChain().getMixer().getTempo().getArrangerAutomation().getEvents().stream()
                 .map(event -> new TempoEvent(event.getTime(), event.getValue()))
-                .sorted(Comparator.comparingDouble(TempoEvent::getTime))
+                .sorted(Comparator.comparingDouble(TempoEvent::getTimeQuarters))
                 .collect(Collectors.toList());
     }
 
     public List<TimeSignatureEvent> getTimeSignatureEvents() {
         return ableton.getLiveSet().getMasterTrack().getDeviceChain().getMixer().getTimeSignature().getArrangerAutomation().getEvents().stream()
                 .map(event -> new TimeSignatureEvent(event.getTime(), event.getValue()))
-                .sorted(Comparator.comparingDouble(TimeSignatureEvent::getTime))
+                .sorted(Comparator.comparingDouble(TimeSignatureEvent::getTimeQuarters))
                 .collect(Collectors.toList());
     }
 }

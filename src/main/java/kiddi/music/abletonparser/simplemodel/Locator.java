@@ -1,16 +1,11 @@
 package kiddi.music.abletonparser.simplemodel;
 
-public class Locator {
-    private final double time;
+public class Locator extends Event {
     private final String name;
 
-    public Locator(String time, String name) {
-        this.time = Double.parseDouble(time);
+    public Locator(String timeQuarters, String name) {
+        super(timeQuarters);
         this.name = name;
-    }
-
-    public double getTime() {
-        return time;
     }
 
     public String getName() {
